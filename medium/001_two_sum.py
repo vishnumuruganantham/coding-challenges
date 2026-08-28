@@ -1,4 +1,4 @@
-# Problem 5: Two Sum
+# Problem 1: Two Sum
 # Input: [2, 7, 11, 15], target = 9  |  Output: indices [0, 1] (2 + 7 = 9)
 # Very common interview problem. The dict approach is expected.
 
