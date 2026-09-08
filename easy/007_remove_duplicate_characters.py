@@ -23,10 +23,8 @@ def remove_duplicates(s):
 print("Approach 1:", remove_duplicates(input))
 
 
+# Approach 2: using dict.fromkeys which preserves order
 def remove_duplicates_2(s):
-    print(set(s))
-    print(dict.fromkeys(s))
-    print(list(dict.fromkeys(s)))
     return "".join(list(dict.fromkeys(s)))
 
 
