@@ -3,29 +3,29 @@ Input: [5,3,8,1,9]
 Output: [1,3,5,8,1,9]
 """
 
-list_input = [5, 3, 8, 1, 9]
+numbers = [5, 3, 8, 1, 9]
 
 
-def sort(list_input):
-    list_input.sort()  # list.sort(), sorts in place
-    return list_input
+def sort(nums):
+    nums.sort()  # list.sort(), sorts in place
+    return nums
 
 
-def sort_1(list_input):
-    output = sorted(list_input)  # sorted(list) returns a new sorted array
+def sort_1(nums):
+    output = sorted(nums)  # sorted(list) returns a new sorted array
     return output
 
 
-def bubble_sort(list_input):
-    n = len(list_input)
+def bubble_sort(nums):
+    n = len(nums)
     for i in range(n - 1):
         for j in range(n - 1 - i):
-            if list_input[j] > list_input[j + 1]:
-                list_input[j], list_input[j + 1] = list_input[j + 1], list_input[j]
-    return list_input
+            if nums[j] > nums[j + 1]:
+                nums[j], nums[j + 1] = nums[j + 1], nums[j]
+    return nums
 
 
-print(list_input)
-print(sort(list_input))
-print(sort_1(list_input))
-print(bubble_sort(list_input))
+print(numbers)
+print(sort(numbers))
+print(sort_1(numbers))
+print(bubble_sort(numbers))
