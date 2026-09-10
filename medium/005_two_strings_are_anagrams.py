@@ -40,3 +40,22 @@ print(is_anagram("listen", "silent"))
 print(is_anagram("Astronomer", "Moon starer"))  # Returns True (Normalized match)
 print(is_anagram("apple", "paxle"))  # Returns False (Fails early on 'x')
 print(is_anagram("hello", "hellooo"))  # Returns False (Fails length check)
+
+
+# Approach 2: Sorting string which returns characters in sorted list and then comparing
+def is_anagram_2(s1, s2):
+    return sorted(s1) == sorted(s2)
+
+
+print(is_anagram_2("listen", "silent"))
+
+
+from collections import Counter
+
+
+# Approach 3: Counter Comparison
+def is_anagram_3(s1, s2):
+    return Counter(s1) == Counter(s2)
+
+
+print(is_anagram_3("listen", "silent"))
