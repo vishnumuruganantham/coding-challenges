@@ -2,11 +2,11 @@
 # Input: [1, 2, 2, 3, 3, 4]  |  Output: [1, 2, 3, 4]
 
 # If order does NOT matter
-nums = [1, 2, 2, 3, 3, 4]
-unique = list(set(nums))  # [1, 2, 3, 4]
+numbers = [1, 2, 2, 3, 3, 4]
+unique = list(set(numbers))  # [1, 2, 3, 4]
 
 # If order MUST be preserved (Pythonic)
-unique = list(dict.fromkeys(nums))  # [1, 2, 3, 4]
+unique = list(dict.fromkeys(numbers))  # [1, 2, 3, 4]
 
 
 # Manual version preserving order
