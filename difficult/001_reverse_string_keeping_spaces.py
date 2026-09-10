@@ -1,3 +1,11 @@
+"""
+Input:  'the sky is blue'
+Output: 'eul bsi yk seht'
+"""
+
+# Reverse the string keeping the spaces
+
+
 def reverse_string_keep_spaces(s):
     # Convert string to a list since strings are immutable in Python
     chars = list(s)
