@@ -3,7 +3,7 @@ Input: Vishnu
 Output: Vowels:2, Consonants:4
 """
 
-input = "Vishnu"
+name_input = "Vishnu"
 
 
 # Approach 1: Loop

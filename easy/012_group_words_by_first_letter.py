@@ -4,7 +4,7 @@ Input: ['apple','ant', ball','banana','cat']
 Output: a=['apple','ant'], b=['ball','banana'], c=['cat]
 """
 
-input = ["apple", "ant", "ball", "banana", "cat"]
+words = ["apple", "ant", "ball", "banana", "cat"]
 
 
 def group_by_letter(words):
@@ -21,7 +21,7 @@ def group_by_letter(words):
     return group
 
 
-print(group_by_letter(input))
+print(group_by_letter(words))
 
 
 # Approach using defaultdict
@@ -38,4 +38,4 @@ def group_by_letter_2(words):
     return dict(group)
 
 
-print(group_by_letter_2(input))
+print(group_by_letter_2(words))
