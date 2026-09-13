@@ -1,19 +1,49 @@
+# Write a function to find the longest common prefix string amongst an array of strings.
+
+# If there is no common prefix, return an empty string "".
+
+# Example 1:
+
+# Input: strs = ["flower","flow","flight"]
+# Output: "fl"
+# Example 2:
+
+# Input: strs = ["dog","racecar","car"]
+# Output: ""
+# Explanation: There is no common prefix among the input strings.
+
+
+# Constraints:
+
+# 1 <= strs.length <= 200
+# 0 <= strs[i].length <= 200
+# strs[i] consists of only lowercase English letters if it is non-empty.
+
+
 class Solution(object):
-    def longestCommonPrefix(self, strs):
+
+    # Vertical Scanning
+    def longestCommonPrefix_1(self, strs):
         """
         :type strs: List[str]
         :rtype: str
         """
-        length = [len(s) for s in strs]
-        smallest = min(length)
-        for i in range(smallest + 1):
-            prefix = strs[0][0:i]
+        if not strs:
+            return ""
+
+        # Loop through the characters of the first string
+        for i in range(len(strs[0])):
+            char = strs[0][i]
+
+            # Check this character against all other strings
             for s in strs:
-                if s.find(prefix) != 0:
-                    return prefix[: len(prefix) - 1]
+                # If the string is shorter than index i, or character doesn't match
+                if i >= len(s) or s[i] != char:
+                    return strs[0][:i]
 
-        return prefix
+        return strs[0]
 
+    # Sorting elimination
     def longestCommonPrefix_2(self, strs):
         if not strs:
             return ""
@@ -27,6 +57,7 @@ class Solution(object):
 
         return first[:i]
 
+    # Horizontal Scanning
     def longestCommonPrefix_3(self, strs):
         if not strs:
             return ""
@@ -46,25 +77,24 @@ class Solution(object):
 
 
 solution_instance = Solution()
-print(solution_instance.longestCommonPrefix(["flower", "flow", "floght"]))
-print(solution_instance.longestCommonPrefix(["12", "flow", "floght"]))
-print(solution_instance.longestCommonPrefix(["abc", "a", "ab"]))
-print(solution_instance.longestCommonPrefix(["abcde", "abcde", "adbce"]))
-print(solution_instance.longestCommonPrefix(["flower", "flow", "floght"]))
-print(solution_instance.longestCommonPrefix(["", "flow", "floght"]))
-
-
+print(solution_instance.longestCommonPrefix_1(["flower", "flow", "floght"]))
+print(solution_instance.longestCommonPrefix_1(["12", "flow", "floght"]))
+print(solution_instance.longestCommonPrefix_1(["abc", "a", "ab"]))
+print(solution_instance.longestCommonPrefix_1(["abcde", "abcde", "adbce"]))
+print(solution_instance.longestCommonPrefix_1(["flower", "flow", "floght"]))
+print(solution_instance.longestCommonPrefix_1(["", "flow", "floght"]))
+print("---")
 print(solution_instance.longestCommonPrefix_2(["flower", "flow", "floght"]))
 print(solution_instance.longestCommonPrefix_2(["12", "flow", "floght"]))
 print(solution_instance.longestCommonPrefix_2(["abc", "a", "ab"]))
 print(solution_instance.longestCommonPrefix_2(["abcde", "abcde", "adbce"]))
 print(solution_instance.longestCommonPrefix_2(["flower", "flow", "floght"]))
 print(solution_instance.longestCommonPrefix_2(["", "flow", "floght"]))
-
-
+print("---")
 print(solution_instance.longestCommonPrefix_3(["flower", "flow", "floght"]))
 print(solution_instance.longestCommonPrefix_3(["12", "flow", "floght"]))
 print(solution_instance.longestCommonPrefix_3(["abc", "a", "ab"]))
 print(solution_instance.longestCommonPrefix_3(["abcde", "abcde", "adbce"]))
 print(solution_instance.longestCommonPrefix_3(["flower", "flow", "floght"]))
 print(solution_instance.longestCommonPrefix_3(["", "flow", "floght"]))
+print("---")
