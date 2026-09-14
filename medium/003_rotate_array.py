@@ -22,7 +22,7 @@ def reverse(nums, i, j):
         j -= 1
 
 
-nums = [1, 2, 3, 4, 5]
-k = 4
+sample_nums = [1, 2, 3, 4, 5]
+sample_k = 4
 
-print(rotate(nums, k))
+print(rotate(sample_nums, sample_k))
