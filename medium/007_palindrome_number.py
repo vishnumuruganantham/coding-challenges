@@ -41,6 +41,9 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
+        if x is None:
+            return None
+
         # Negative numbers and numbers ending in 0 (except 0 itself) cannot be palindromes
         if x < 0 or (x % 10 == 0 and x != 0):
             return False
