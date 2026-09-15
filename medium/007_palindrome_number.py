@@ -41,20 +41,20 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
-
-        if not x or x < 0 or (x % 10 == 0 and x != 0):
-            # print("ulla vandhruku")
+        # Negative numbers and numbers ending in 0 (except 0 itself) cannot be palindromes
+        if x < 0 or (x % 10 == 0 and x != 0):
             return False
         reversed_number = 0
 
+        # Reversing only the second half of the number to prevent integer overflow
         while x > reversed_number:
             reversed_number = (reversed_number * 10) + (x % 10)
             x = x // 10
 
-        if x in [reversed_number, reversed_number // 10]:
-            return True
-
-        return False
+        # Check if the first half and reversed second half match
+        # x == reversed_number handles even-digit numbers (e.g., 1221 -> x=12, reversed=12)
+        # x == reversed_number // 10 handles odd-digit numbers (e.g., 12321 -> x=12, reversed=123)
+        return x == reversed_number or x == reversed_number // 10
 
 
 solution_instance = Solution()
